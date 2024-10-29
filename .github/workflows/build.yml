@@ -16,7 +16,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
         id: go
       - name: Build webhook binary
-        run: go build -v -o /out
+        run: go build -v
       # - name: Test
       #   run: go test -v ./...
       - run: ls -al
@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: webhook
-          path: ./out/
+          path: ./webhook
           if-no-files-found: warn
           overwrite: true
           compression-level: 0
