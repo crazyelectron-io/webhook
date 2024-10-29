@@ -32,6 +32,8 @@ jobs:
           compression-level: 0
       - name: Create the release
         uses: elgohr/Github-Release-Action@v5
+        env:
+          GH_TOKEN: ${{ github.token }}
         with:
           tag: 1.0
           title: Webhook release
